@@ -83,7 +83,7 @@ def send_leaves_to_gcalendar(leaves):
                 ]
             }
 
-            event = service.events().insert(calendarId=<EMAIL>, body=event,
+            event = service.events().insert(calendarId=[EMAIL], body=event,
                                             sendUpdates='all').execute()
             print('Event created: %s' % (event.get('htmlLink')))
         else:
@@ -100,7 +100,7 @@ def cancel_cancelled_leaves(cancelled_leaves):
 
         if (cancelled_result['items']):
             google_event_id = cancelled_result['items'][0]['id']
-            service.events().delete(calendarId=<EMAIL>, eventId=google_event_id,
+            service.events().delete(calendarId=[EMAIL], eventId=google_event_id,
                                     sendUpdates='all').execute()
         else:
             print(event_id + ' already not on calendar')
