@@ -11,7 +11,7 @@ import json
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-API_TOKEN = "xlK1nDPGy91oGyZRnBaRTbSvpYTo1oMuxO1g9ORcDokOp5"
+API_TOKEN = ""
 BASE_URL = "https://kolayik.com/api/v2/"
 LIST_URL = "person/list"
 VIEW_URL = "person/view"
@@ -100,7 +100,7 @@ def cancel_cancelled_leaves(cancelled_leaves):
 
         if (cancelled_result['items']):
             google_event_id = cancelled_result['items'][0]['id']
-            service.events().delete(calendarId='out-of-office@kolayik.com', eventId=google_event_id,
+            service.events().delete(calendarId=<EMAIL>, eventId=google_event_id,
                                     sendUpdates='all').execute()
         else:
             print(event_id + ' already not on calendar')
