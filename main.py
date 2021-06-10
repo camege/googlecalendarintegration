@@ -135,4 +135,4 @@ cancelled_leaves = get_leaves(employees, BASE_URL + CANCELLED_LEAVE_URL)
 send_leaves_to_gcalendar(leaves)
 cancel_cancelled_leaves(cancelled_leaves)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
