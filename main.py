@@ -11,7 +11,7 @@ import json
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
-API_TOKEN = ""
+API_TOKEN = <API_TOKEN>
 BASE_URL = "https://kolayik.com/api/v2/"
 LIST_URL = "person/list"
 VIEW_URL = "person/view"
@@ -83,7 +83,7 @@ def send_leaves_to_gcalendar(leaves):
                 ]
             }
 
-            event = service.events().insert(calendarId='out-of-office@kolayik.com', body=event,
+            event = service.events().insert(calendarId=<EMAIL>, body=event,
                                             sendUpdates='all').execute()
             print('Event created: %s' % (event.get('htmlLink')))
         else:
