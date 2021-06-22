@@ -27,10 +27,10 @@ def make_request(method, url, payload):
 
 def get_employees():
     person_list = []
-    temp = 0
-    last = 1
+    temp = 1
+    last = 2
     while temp < last:
-        response = make_request("POST", BASE_URL + LIST_URL, {'status': 'active'})
+        response = make_request("POST", BASE_URL + LIST_URL, {'status': 'active', "page": temp})
         if not response['error']:
             temp = (response['data']['currentPage'])
             last = (response['data']['lastPage'])
